@@ -1,4 +1,5 @@
 #!/bin/bash
+chmod +x ./entrypoint.sh
 set -e
 
 echo "🔍 Checking Quay repo: $QUAY_REPO for tag: $COMMIT_SHA"

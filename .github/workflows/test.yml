@@ -9,8 +9,12 @@ jobs:
   check-image:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Wait for Quay image
         uses: petracihalova/check-quay-image@v1
         with:
           quay_repo: redhat-services-prod/hcc-accessmanagement-tenant/insights-rbac
           commit_sha: 89efd83
+          delay_minutes: 0
