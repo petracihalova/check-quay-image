@@ -1,4 +1,4 @@
-name: Test Check Quay Image Action
+name: Test Check Quay Image Action - FAIL
 
 on:
   pull_request:
@@ -16,6 +16,7 @@ jobs:
         uses: petracihalova/check-quay-image@v1
         with:
           quay_repo: redhat-services-prod/hcc-accessmanagement-tenant/insights-rbac
-          commit_sha: 89efd83
+          commit_sha: ${{ github.sha }}
           delay_minutes: 1
+          retries: 2
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
