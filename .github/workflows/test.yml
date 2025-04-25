@@ -9,9 +9,13 @@ jobs:
   check-image:
     runs-on: ubuntu-latest
     steps:
+      - name: List files
+        run: ls -R /home/runner/work/_temp
+      - name: List files 2
+        run: ls -alh
       - name: Wait for Quay image
         uses: petracihalova/check-quay-image@v1
         with:
           quay_repo: redhat-services-prod/hcc-accessmanagement-tenant/insights-rbac
           commit_sha: 89efd83
-          delay_minutes: 1
+          delay_minutes: 2
