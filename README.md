@@ -21,8 +21,6 @@ It helps you catch problems early, before they break later steps.
 |--------------------|----------|---------|-------------|
 | `quay_repo`        | ✅       |         | `namespace/repo` format |
 | `commit_sha`       | ✅       |         | Commit SHA to match tag |
-| `quay_private`     | ❌       | false   | Set to `"true"` if repo is private |
-| `quay_token`       | ❌       |         | Quay API token (used only if private) |
 | `delay_minutes`    | ❌       | 10      | Initial delay before first check |
 | `retries`          | ❌       | 20      | Number of retry attempts |
 | `interval_minutes` | ❌       | 1       | Time between retries |
@@ -50,3 +48,4 @@ jobs:
         with:
           quay_repo: redhat-services-prod/hcc-accessmanagement-tenant/insights-rbac
           commit_sha: ${{ github.sha }}
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
