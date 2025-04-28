@@ -21,12 +21,13 @@ It helps you catch problems early, before they break later steps.
 |--------------------|----------|---------|-------------|
 | `quay_repo`        | ✅       |         | `namespace/repo` format |
 | `commit_sha`       | ✅       |         | Commit SHA to match tag |
-| `quay_private`     | ❌       | false   | Set to `"true"` if repo is private |
-| `quay_token`       | ❌       |         | Quay API token (used only if private) |
 | `delay_minutes`    | ❌       | 10      | Initial delay before first check |
 | `retries`          | ❌       | 20      | Number of retry attempts |
 | `interval_minutes` | ❌       | 1       | Time between retries |
 | `slack_webhook_url`| ❌       |         | Slack webhook URL for notification on failure |
+
+<!-- | `quay_private`     | ❌       | false   | Set to `"true"` if repo is private |
+| `quay_token`       | ❌       |         | Quay API token (used only if private) | -->
 
 ## Example Usage
 for image in repo https://quay.io/repository/redhat-services-prod/hcc-accessmanagement-tenant/insights-rbac 
